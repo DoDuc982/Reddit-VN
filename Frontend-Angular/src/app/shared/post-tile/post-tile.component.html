@@ -1,0 +1,40 @@
+<!-- Display Posts-->
+<div class="row post" *ngFor="let post of posts">
+  <app-vote-button [post]="post"></app-vote-button>
+  <!-- Section to Display Post Information-->
+  <div class="col-md-11">
+    <span class="subreddit-info">
+      <span class="subreddit-text"
+        >Chủ đề: <span class="posturl">{{ post.subredditName }}</span></span
+      >
+      <span>
+        . Đăng bởi
+        <span style="color: rgb(0, 0, 0)" class="username">{{
+          post.userName
+        }}</span></span
+      >
+      <span> . {{ post.duration }}</span>
+    </span>
+    <hr />
+    <div class="post-title">
+      <span class="postname">{{ post.postName }}</span>
+    </div>
+    <div>
+      <p class="post-text" [innerHtml]="post.description"></p>
+    </div>
+    <hr />
+    <span>
+      <a class="btnCommments" role="button">
+        <fa-icon [icon]="faComments"></fa-icon>
+        Bình luận ({{ post.commentCount }})
+      </a>
+      <button
+        class="login"
+        (click)="goToPost(post.id)"
+        style="margin-left: 20px"
+      >
+        Đọc bình luận
+      </button>
+    </span>
+  </div>
+</div>

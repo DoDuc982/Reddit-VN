@@ -1,0 +1,12 @@
+<div class="container">
+  <div>
+    Chào mừng bạn <b>{{ name }}</b
+    >.<br />
+    Bạn đã đăng bài <b>{{ postLength }}</b> lần và bình luận
+    <b>{{ commentLength }}</b> lần. Đây là lịch sử bài đăng.
+  </div>
+  <hr />
+  <div><b>Bài đăng của bạn</b></div>
+  <app-post-tile [posts]="posts"></app-post-tile>
+  <hr />
+</div>

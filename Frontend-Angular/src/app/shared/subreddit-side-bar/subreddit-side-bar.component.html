@@ -1,0 +1,16 @@
+<div class="sidebar-view-subreddit">
+  <div
+    style="color: black; font-weight: bold; text-align: center; margin: 10px"
+  >
+    Danh sách các chủ đề
+  </div>
+  <span *ngFor="let subreddit of subreddits">
+    <span class="subreddit-text"
+      ><a>- {{ subreddit.name }}</a></span
+    ><br />
+  </span>
+  <br />
+  <div style="text-align: center; color: black" *ngIf="displayViewAll">
+    <a style="font-weight: bold" routerLink="/list-subreddits">Xem tất cả</a>
+  </div>
+</div>

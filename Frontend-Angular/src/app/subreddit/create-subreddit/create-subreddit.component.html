@@ -1,0 +1,58 @@
+<div class="container">
+  <div class="row">
+    <div class="create-subreddit-container">
+      <form
+        class="post-form"
+        [formGroup]="createSubredditForm"
+        (ngSubmit)="createSubreddit()"
+      >
+        <div class="form-group" style="padding: 20px 40px">
+          <div class="create-subreddit-heading" style="margin: 10px 0">
+            Tạo chủ đề
+          </div>
+          <input
+            type="text"
+            style="margin: 10px 0"
+            [formControlName]="'title'"
+            class="form-control"
+            placeholder="Chủ đề"
+          />
+          <textarea
+            type="text"
+            style="margin: 10px 0"
+            [formControlName]="'description'"
+            style="width: 100%"
+            placeholder="Mô tả"
+          ></textarea>
+          <div>
+            <div style="margin-top: 5px" class="float-right">
+              <button
+                (click)="discard()"
+                class="btnDiscard"
+                style="margin: 0 30px"
+              >
+                Loại bỏ
+              </button>
+              <button class="btnCreateSubreddit" style="margin: 0 30px">
+                Tạo chủ đề
+              </button>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+    <div class="col-md-3">
+      <div class="sidebar">
+        <h5 class="guidelines">
+          Các lưu ý khi đăng bài <span style="color: red">*</span>
+        </h5>
+        <hr />
+        <ul>
+          <li>Không spam một chủ đề</li>
+          <hr />
+          <li>Hành động một cách văn minh và lịch sự</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

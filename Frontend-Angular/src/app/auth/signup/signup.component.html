@@ -1,0 +1,101 @@
+<div class="register-section">
+  <div class="row justify-content-center">
+    <div class="col-md-3"></div>
+    <div class="col-md-6">
+      <div class="card">
+        <div class="card-header" style="text-align: center">
+          <h4>Đăng kí tài khoản</h4>
+        </div>
+        <div class="card-body">
+          <form [formGroup]="signupForm" (ngSubmit)="signup()">
+            <div class="form-group row">
+              <label
+                for="email_address"
+                class="col-md-4 col-form-label text-md-right"
+                >Địa chỉ E-mail</label
+              >
+              <div class="col-md-8">
+                <input
+                  type="text"
+                  [formControlName]="'email'"
+                  id="email_address"
+                  class="form-control"
+                  name="email-address"
+                  required
+                  autofocus
+                />
+                <span
+                  *ngIf="
+                    !signupForm.get('email').valid &&
+                    signupForm.get('email').touched
+                  "
+                >
+                  <i>Cung cấp địa chỉ email </i
+                  ><span style="color: red">*</span>
+                </span>
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <label class="col-md-4 col-form-label text-md-right"
+                >Tên đăng nhập</label
+              >
+              <div class="col-md-8">
+                <input
+                  type="text"
+                  [formControlName]="'username'"
+                  class="form-control"
+                  required
+                  autofocus
+                />
+                <span
+                  *ngIf="
+                    !signupForm.get('username').valid &&
+                    signupForm.get('username').touched
+                  "
+                >
+                  <i>Cung cấp tên đăng nhập </i
+                  ><span style="color: red">*</span>
+                </span>
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <label
+                for="password"
+                class="col-md-4 col-form-label text-md-right"
+                >Mật khẩu</label
+              >
+              <div class="col-md-8">
+                <input
+                  type="password"
+                  [formControlName]="'password'"
+                  id="password"
+                  class="form-control"
+                  name="password"
+                  required
+                />
+                <span
+                  *ngIf="
+                    !signupForm.get('password').valid &&
+                    signupForm.get('password').touched
+                  "
+                >
+                  <i>Cung cấp mật khẩu </i><span style="color: red">*</span>
+                </span>
+              </div>
+            </div>
+
+            <span class="col-md-6 offset-md-4">
+              <button type="submit" class="sign-up">Đăng kí</button>
+              <span style="padding-left: 15px"
+                ><a routerLink="/login" style="color: blue">Đăng nhập</a></span
+              >
+            </span>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3"></div>
+  </div>
+</div>

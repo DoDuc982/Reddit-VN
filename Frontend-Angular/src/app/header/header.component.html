@@ -1,0 +1,41 @@
+<header>
+  <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
+    <div class="flex-grow-1">
+      <a aria-label="Home" class="logo" routerLink="/">
+        <img
+          src="https://cdn-icons-png.flaticon.com/512/197/197473.png"
+          width="40"
+          height="40"
+          alt="Vietnam free icon"
+          title="Vietnam free icon"
+          style="margin-right: 10px"
+        />
+        <span class="reddit-text"> Reddit Việt Nam</span>
+      </a>
+    </div>
+    <div class="flex-grow-1 float-right">
+      <div
+        *ngIf="isLoggedIn"
+        ngbDropdown
+        class="float-right"
+        style="margin-right: 25px"
+      >
+        <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+          <button (click)="goToUserProfile()" ngbDropdownItem>Thông tin</button>
+          <button (click)="logout()" ngbDropdownItem>Đăng xuất</button>
+        </div>
+        <button class="userdetails" id="dropdownBasic1" ngbDropdownToggle>
+          <img
+            class="account-icon"
+            src="https://www.redditstatic.com/avatars/avatar_default_08_D4E815.png"
+          />
+          {{ username }}
+        </button>
+      </div>
+      <div *ngIf="!isLoggedIn">
+        <a routerLink="/sign-up" class="float-right sign-up mr-2">Đăng kí</a>
+        <a routerLink="/login" class="float-right login mr-2">Đăng nhập</a>
+      </div>
+    </div>
+  </nav>
+</header>
