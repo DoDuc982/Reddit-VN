@@ -25,13 +25,13 @@ public class VoteService {
     @Transactional
     public void vote(VoteDto voteDto) {
         Post post = postRepository.findById(voteDto.getPostId())
-                .orElseThrow(() -> new PostNotFoundException("Post Not Found with ID - " + voteDto.getPostId()));
+                .orElseThrow(() -> new PostNotFoundException("Không tìm thấy bài viết có ID là: " + voteDto.getPostId()));
         Optional<Vote> voteByPostAndUser = voteRepository.findTopByPostAndUserOrderByVoteIdDesc(post, authService.getCurrentUser());
         if (voteByPostAndUser.isPresent() &&
                 voteByPostAndUser.get().getVoteType()
                         .equals(voteDto.getVoteType())) {
-            throw new SpringRedditException("You have already "
-                    + voteDto.getVoteType() + "'d for this post");
+            throw new SpringRedditException("Đã bình chọn "
+                    + voteDto.getVoteType() + "cho bài viết này");
         }
         if (VoteType.UPVOTE.equals(voteDto.getVoteType())) {
             post.setVoteCount(post.getVoteCount() + 1);

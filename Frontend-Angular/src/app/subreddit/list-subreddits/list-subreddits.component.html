@@ -3,10 +3,13 @@
     <hr />
     <div class="col-md-9">
       <h2>Danh sách các chủ đề</h2>
+      <hr />
       <ul>
         <li *ngFor="let subreddit of subreddits">
-          <a>{{ subreddit.name }}</a>
-          <br /><br />
+          <span>Tên chủ đề: </span><a>{{ subreddit.name }}</a>
+          <br />
+
+          <p><span>Mô tả: </span>{{ subreddit.description }}</p>
         </li>
       </ul>
     </div>

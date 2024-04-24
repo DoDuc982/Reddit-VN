@@ -13,12 +13,7 @@
 }
 
 .username {
-  color: rgb(0, 0, 0);
-}
-
-.comment p {
-  margin-left: 15px;
-  color: rgb(57, 57, 57);
+  color: #000000;
 }
 
 .post-text {

@@ -36,14 +36,13 @@
               <button type="submit" class="login float-right">Bình luận</button>
             </form>
           </div>
-          <div style="margin-top: 60px" *ngFor="let comment of comments">
-            <div class="comment">
+          <div style="margin-top: 60px">
+            <div class="comment" *ngFor="let comment of comments">
               <div class="username">
-                Người bình luận:
-                <p>{{ comment.userName }}</p>
+                Bình luận bởi:
+                <b> {{ comment.userName }}</b>
               </div>
-              Nội dung:
-              <p>{{ comment.text }}</p>
+              Nội dung: <i> {{ comment.text }}</i>
             </div>
             <hr />
           </div>

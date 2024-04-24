@@ -11,8 +11,8 @@ import lombok.NoArgsConstructor;
 public class PostRequest {
     private Long postId;
     private String subredditName;
-    @NotBlank(message = "Post Name cannot be empty or Null")
-    private String postName;
     private String url;
+    @NotBlank(message = "Post name cannot be empty or null")
+    private String postName;
     private String description;
 }

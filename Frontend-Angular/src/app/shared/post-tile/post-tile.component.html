@@ -24,7 +24,7 @@
     </div>
     <hr />
     <span>
-      <a class="btnCommments" role="button">
+      <a class="btnCommments" role="button" (click)="goToPost(post.id)">
         <fa-icon [icon]="faComments"></fa-icon>
         Bình luận ({{ post.commentCount }})
       </a>

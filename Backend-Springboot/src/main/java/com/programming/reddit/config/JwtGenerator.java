@@ -1,4 +1,4 @@
-package com.programming.reddit.security;
+package com.programming.reddit.config;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
@@ -13,7 +13,7 @@ import java.time.Instant;
 
 @Service
 @RequiredArgsConstructor
-public class JwtProvider {
+public class JwtGenerator {
 
     private final JwtEncoder jwtEncoder;
     @Value("${jwt.expiration.time}")
